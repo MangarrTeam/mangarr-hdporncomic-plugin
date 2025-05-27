@@ -183,6 +183,7 @@ class HDPornComicPlugin(MangaPluginBase):
         chapter["name"] = arguments.get("name")
         chapter["writer"] = ", ".join(arguments.get("writers"))
         chapter["page_count"] = arguments.get("pages")
+        chapter["age_rating"] = AgeRating.R18_PLUS
         chapter["arguments"] = arguments
         chapter["url"] = arguments.get("url")
         chapter["source_url"] = arguments.get("url")
