@@ -146,16 +146,16 @@ class HDPornComicPlugin(MangaPluginBase):
 
             if m_type.startswith("Tags"):
                 for tag in values_span.xpath(".//span/a"):
-                    manga["tags"].append(tag.text)
+                    manga["tags"].append(tag.text.replace("&amp;", "&"))
             elif m_type.startswith("Genres"):
                 for genre in values_span.xpath(".//span/a"):
-                    manga["genres"].append(genre.text)
+                    manga["genres"].append(genre.text.replace("&amp;", "&"))
             elif m_type.startswith("Artist"):
                 for artist in values_span.xpath(".//span/a"):
-                    manga["writers"].append(artist.text)
+                    manga["writers"].append(artist.text.replace("&amp;", "&"))
             elif m_type.startswith("Images"):
                 if len(values_span) != 0:
-                    manga["pages"] = int(values_span[0].text)
+                    manga["pages"] = int(values_span[0].text.replace("&amp;", "&"))
 
         manga["url"] = url
 
