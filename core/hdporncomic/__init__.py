@@ -155,7 +155,7 @@ class HDPornComicPlugin(MangaPluginBase):
                     manga["writers"].append(artist.text.replace("&amp;", "&"))
             elif m_type.startswith("Images"):
                 if len(values_span) != 0:
-                    manga["pages"] = int(values_span[0].text.replace("&amp;", "&"))
+                    manga["pages"] = int(values_span[0].text)
 
         manga["url"] = url
 
